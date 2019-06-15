@@ -27,7 +27,7 @@
     font-style: italic;
     font-size: 40px;
 
-    position: relative;
+    position: fixed;
     top: -1px;
     left: 10px;
 }
