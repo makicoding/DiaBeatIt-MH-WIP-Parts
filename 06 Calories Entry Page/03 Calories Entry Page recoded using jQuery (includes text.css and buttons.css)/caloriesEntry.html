@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+
+    
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="assets/css/hamburgerMenu.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/text.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mainContentContainer.css">
+
+    <!-- Moment.js Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <title>DiaBeatIt</title>
+
+</head>
+<body>
+    
+    <!-------------------------------------------------------------------------------->
+    <!-- MAIN CONTENT OF PAGE -->
+
+    <!-- Page header -->
+    <div class="pageHeader">Calories Entry</div>
+    
+        <!-- Main content container -->
+        <div class="mainContentContainer">
+
+            <!-- BOOTSTRAP GRID -->
+            <!-- Max width 960px container -->
+            <div class="container">         <!-- Put any bootstrap elements into class="container" to set max width to 960px and have it centered on page -->
+                
+                <!-- Calories entry form -->
+                <div class="row">
+
+                    <div class="col-md-6 offset-md-3">           
+
+                        <!-- Subrow 1 -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="sectionTitle">Enter data:</p>
+                            </div>
+                        </div> 
+
+                        <!------------------------------>
+                        <!-- Subrow 2 (FORM SECTION 1)-->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">1.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Please select date:</p>
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+                        
+                        <!------------------------------>
+                        <!-- Subrow 3 (FORM SECTION 2) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">2.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Please select meal category:</p>
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+
+                        <!------------------------------>
+                        <!-- Subrow 4 (FORM SECTION 3) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">3.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <text class="mainContentTextBlack">Please enter <span class="mainContentTextRed">ONE</span> of the following parts:</text>
+                                <p class="mainContentTextRed">(fill out either part A, B, C or D only)</p>
+                            </div>
+                        </div> 
+
+                        <!-- Subrow 5 -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">A.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Select from meal list:</p>
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                                <br>
+                                <input type="text" class="form-control" id="name" placeholder="Quantity" required>
+                            </div>
+                        </div>
+                        
+                        <br></br>
+
+                        <!-- Subrow 6 -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">B.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Manual entry of meal:</p>
+                                <input type="text" class="form-control" id="name" placeholder="Name of meal" required>
+                                <br>
+                                <input type="text" class="form-control" id="name" placeholder="Calories" required>
+                            </div>
+                        </div> 
+
+                        <br></br>
+
+                        <!-- Subrow 7 -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">C.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Select from ingredient list:</p>
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                                <br>
+                                <input type="text" class="form-control" id="name" placeholder="Grams" required>
+                            </div>
+                        </div> 
+
+                        <br></br>
+
+                        <!-- Subrow 8 -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">D.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Manual entry of ingredient:</p>
+                                <input type="text" class="form-control" id="name" placeholder="Name of ingredient" required>
+                                <br>
+                                <input type="text" class="form-control" id="name" placeholder="Calories per gram" required>
+                                <br>
+                                <input type="text" class="form-control" id="name" placeholder="Grams" required>
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+
+                        <!------------------------------>
+                        <!-- Subrow 7 (FORM SECTION 4) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="mainContentTextBlack">4.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Please enter any additional notes (optional):</p>
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                            </div>
+                        </div> 
+                        
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+                        
+                        <!-- Subrow 2 inside Card -->
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-4">
+                                <h4>Coffee</h4>
+                                <h5>$2.00</h5>
+                                <p>Please select quantity to order:</p>
+                                <select class="chosen-select" id="item1">
+                                    <option value="0"></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="700">Hamburger (700calories)</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                                <br></br>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <hr>
+
+                        <!-- Subrow 3 inside Card -->
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-4">
+                                <h4>Latte</h4>
+                                <h5>$3.00</h5>
+                                <p>Please select quantity to order:</p>
+                                <select class="chosen-select" id="item2">
+                                    <option value="0"></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                                <br></br>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <hr>
+
+                        <!-- Subrow 4 inside Card -->
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-4">
+                                <h4>Croissant</h4>
+                                <h5>$3.00</h5>
+                                <p>Please select quantity to order:</p>
+                                <select class="chosen-select" id="item3">
+                                    <option value="0"></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                                <br></br>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <hr>
+
+                        <!-- Subrow 5 inside Card -->
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            
+                            <div class="col-md-10">
+                                <button class="addNewOrderButton">Submit</button>
+                            </div>
+                        </div> 
+                                    
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    
+
+
+    <!-------------------------------------------------------------------------------->
+    <!-- NAVBAR -->
+
+    <!-- The Overlay -->
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- &times; is the icon for X -->
+  
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <span class="nonActiveButton">Calorie Entry</span>
+          <a href="index.html">Calorie Data</a>
+          <a href="index.html">Store Finder</a>
+          <a href="index.html">Recipes Finder</a>
+          <a href="index.html">Health Timeline</a>
+          <a href="index.html">Digital Health Card</a>
+          <a href="index.html">Resources</a>
+          <a href="index.html">Contact</a>
+          <a href="index.html">Sign Out</a>
+        </div>
+  
+      </div>
+  
+      <!-- Top Bar and Branding Text -->
+      <div class="topBar">
+        <!-- <span class="branding">Branding</span> -->
+      </div>
+      <a class="branding" href="https://www.google.com">DiaBeatIt</a>
+  
+      <!-- Hamburger Menu -->
+      <div class="topnav">
+  
+        <!-- Hamburger icon -->
+        <a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a> <!-- &#9776; is the hamburger icon -->
+  
+      </div>
+
+
+
+    <!-------------------------------------------------------------------------------->
+    <!-- jQuery (Must use this jQuery link for Smooth Scroll to work) -->
+    <!-- This must come before the Bootstrap Popper and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Popper and Bootstrap JS -->
+    <!-- Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- JavaScript Link -->
+    <script src="assets/javascript/hamburgerMenu.js"></script>
+    <script src="assets/javascript/caloriesEntry.js"></script>
+
+</body>
+</html>
