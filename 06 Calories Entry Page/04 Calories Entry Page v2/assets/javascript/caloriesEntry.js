@@ -1,36 +1,55 @@
-console.log("Firebase JavaScript connected!");
+console.log("caloriesEntry.js connected!");
 
 // ----------------------------------------
 // 1. INITIALIZE FIREBASE DATABASE
 
-var config = {
-    apiKey: "AIzaSyBSpoLRxJj62jPSoJJjS1YwhuWH8i6WhGE",
-    authDomain: "moonbucks-coffee-app.firebaseapp.com",
-    databaseURL: "https://moonbucks-coffee-app.firebaseio.com",
-    projectId: "moonbucks-coffee-app",
-    storageBucket: "moonbucks-coffee-app.appspot.com",
-    messagingSenderId: "45560367600"
-  };
-  firebase.initializeApp(config);
+// var config = {
+//     apiKey: "AIzaSyBSpoLRxJj62jPSoJJjS1YwhuWH8i6WhGE",
+//     authDomain: "moonbucks-coffee-app.firebaseapp.com",
+//     databaseURL: "https://moonbucks-coffee-app.firebaseio.com",
+//     projectId: "moonbucks-coffee-app",
+//     storageBucket: "moonbucks-coffee-app.appspot.com",
+//     messagingSenderId: "45560367600"
+//   };
+//   firebase.initializeApp(config);
 
 
 
 // ----------------------------------------
 // 2. ADD NEW ORDER TO FIREBASE DATABASE
 
-var database = firebase.database();
+// var database = firebase.database();
 
-// Grabs user input
-var newOrderName = $("#name");                             // .val() sets the value of #name that jQuery has gotten ($ is get)     // .trim() trims any white spaces before and after the string, but not in-between the string.
-var newOrderCoffee = $("#item1");
-var newOrderTea = $("#item2");
-var newOrderCroissant = $("#item3");
-var newOrderTime = moment().format('LT');
+
+// ----------------------------------------
+// ADD NEW DATA TO MONGO DB
+
+// Grab user input
+var date = $("#datepicker").val();                  // .val() sets the value of #name that jQuery has gotten ($ is get)     // .trim() trims any white spaces before and after the string, but not in-between the string.
+var mealCategory = $("#calorieEntryPage-mealCategory").val();
+var meal = $("#calorieEntryPage-mealList").val();
+var mealQuantity = $("calorieEntryPage-mealQuantity").val().trim();
+var drink = ("#calorieEntryPage-drinkList").val();
+var drinkNumberOfGlasses = ("#calorieEntryPage-drinkNumberOfGlasses").val().trim();
+var ingredient = $("#calorieEntryPage-ingredientList").val();
+var ingredientGrams = $("#calorieEntryPage-ingredientGrams").val().trim();
+var manualEntryNameOfItem = $("#calorieEntryPage-manualEntryNameOfItem").val().trim();
+var manualEntryCalories = $("#calorieEntryPage-manualEntryCalories").val().trim();
+var notes = $("#calorieEntryPage-notes").val();
+
+
+
+
+// var newOrderName = $("#name");                             // .val() sets the value of #name that jQuery has gotten ($ is get)     // .trim() trims any white spaces before and after the string, but not in-between the string.
+// var newOrderCoffee = $("#item1");
+// var newOrderTea = $("#item2");
+// var newOrderCroissant = $("#item3");
+// var newOrderTime = moment().format('LT');
 
 // Price per item
-var coffeePrice = 2;
-var teaPrice = 3;
-var croissantPrice = 3;
+// var coffeePrice = 2;
+// var teaPrice = 3;
+// var croissantPrice = 3;
 
 // Convert the quantity of the items from strings to numbers
 // var coffeeQuantityNumber = parseInt(newOrderCoffee.val());          // parseInt converts a string into an integer. To convert a string into a decimal number, use parseFloat
@@ -46,7 +65,7 @@ var croissantPrice = 3;
 
 
 // Function occurs when #addNewOrderButton is clicked
-$(".addNewOrderButton").on("click", function(event) {
+$("#calorieEntryPage-submitButton").on("click", function(event) {
 
   event.preventDefault();
 
@@ -55,24 +74,9 @@ $(".addNewOrderButton").on("click", function(event) {
   // --------------------
   // Form validation
   
-
-
-  // If the value for #name or (item1 and #item2 and item3) are empty, toggle the #pleaseFillAllFieldsModal
-  // if ( (!newOrderName.val().trim()) || (!newOrderCoffee.val() && !newOrderTea.val() && !newOrderCroissant.val()) ) {
-
-  //   console.log("Please fill out name and quantity for at least one item before submitting!");
-
-  //   // Show the modal with alerting the user to fill out all fields
-  //   $("#pleaseFillAllFieldsModal").modal("toggle");
-
-  //   return;
-  // }
-
-
-
-  // typeof shows whether the value (.val()) is a string or a number  
-  // Here we are trying to figure out if the value of newOrderCoffee is a string or a number
-  console.log(typeof newOrderCoffee.val(), newOrderTea.val(), newOrderCroissant.val(), newOrderCoffee.val() || newOrderTea.val() || newOrderCroissant.val())
+  // typeof shows whether the value ( .val() ) is a string or a number  
+  // Here we are trying to figure out if the value of meal is a string or a number
+  console.log(date, mealCategory, (typeof meal && mealQuantity) || (drink && drinkNumberOfGlasses) || (ingredient && ingredientGrams) || (manualEntryNameOfItem && manualEntryCalories), notes);
   
   // If the there is NO value for newOrderName, then toggle the #pleaseFillAllFieldsModal
   if (!newOrderName.val().trim()) {
@@ -165,45 +169,45 @@ function orderSuccessModal() {
 
 
 
-// ----------------------------------------
-// 3. WHEN A USER SUBMITS A NEW ORDER, DISPLAY THE SUBMITTED ORDER TO STORE.HTML
+// // ----------------------------------------
+// // 3. WHEN A USER SUBMITS A NEW ORDER, DISPLAY THE SUBMITTED ORDER TO STORE.HTML
 
-// Event to retrieve data from firebase database
-database.ref().on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.val());
+// // Event to retrieve data from firebase database
+// database.ref().on("child_added", function(childSnapshot) {
+//   console.log(childSnapshot.val());
 
-  // Store everything into a variable.
-  var newOrderNameRetrieved = childSnapshot.val().name;
-  var newOrderCoffeeRetrieved = childSnapshot.val().coffee;
-  var newOrderTeaRetrieved = childSnapshot.val().tea;
-  var newOrderCroissantRetrieved = childSnapshot.val().croissant;
-  var newOrderTimeRetrieved = childSnapshot.val().time;
+//   // Store everything into a variable.
+//   var newOrderNameRetrieved = childSnapshot.val().name;
+//   var newOrderCoffeeRetrieved = childSnapshot.val().coffee;
+//   var newOrderTeaRetrieved = childSnapshot.val().tea;
+//   var newOrderCroissantRetrieved = childSnapshot.val().croissant;
+//   var newOrderTimeRetrieved = childSnapshot.val().time;
 
-  // Create the new row
-  var newRow = $("<tr>").prepend(
-    $("<td>").text(newOrderNameRetrieved),
-    $("<td>").text(newOrderCoffeeRetrieved !== "0" ? newOrderCoffeeRetrieved : ""),   // Ternary Operator.  This is like an if/else statement where the ? is the equivalent of if, and : is the equivalent of else
-                                                                                      // In this case we are saying if newOrderCoffeeRetrieved is not zero, then newOrderCoffeeRetrieved. Else "" (an empty string)
-    /*
-    // The following is the long hand version of the Ternary Operator:
+//   // Create the new row
+//   var newRow = $("<tr>").prepend(
+//     $("<td>").text(newOrderNameRetrieved),
+//     $("<td>").text(newOrderCoffeeRetrieved !== "0" ? newOrderCoffeeRetrieved : ""),   // Ternary Operator.  This is like an if/else statement where the ? is the equivalent of if, and : is the equivalent of else
+//                                                                                       // In this case we are saying if newOrderCoffeeRetrieved is not zero, then newOrderCoffeeRetrieved. Else "" (an empty string)
+//     /*
+//     // The following is the long hand version of the Ternary Operator:
 
-    var coffeeOrder = "";
-    if (newOrderCoffeeRetrieved !== "0") {
-      coffeeOrder = newOrderCoffeeRetrieved;
-    }
-    else {
-      coffeeOrder = "";
-    }
-    $("<td>").text(coffeeOrder)
-    */
-    $("<td>").text(newOrderTeaRetrieved !== "0" ? newOrderTeaRetrieved : ""),   
-    $("<td>").text(newOrderCroissantRetrieved !== "0" ? newOrderCroissantRetrieved : ""),
-    $("<td>").text(newOrderTimeRetrieved)
-  );
+//     var coffeeOrder = "";
+//     if (newOrderCoffeeRetrieved !== "0") {
+//       coffeeOrder = newOrderCoffeeRetrieved;
+//     }
+//     else {
+//       coffeeOrder = "";
+//     }
+//     $("<td>").text(coffeeOrder)
+//     */
+//     $("<td>").text(newOrderTeaRetrieved !== "0" ? newOrderTeaRetrieved : ""),   
+//     $("<td>").text(newOrderCroissantRetrieved !== "0" ? newOrderCroissantRetrieved : ""),
+//     $("<td>").text(newOrderTimeRetrieved)
+//   );
 
-  // Append the new row to the table
-  $("#customerOrderTable > tbody").prepend(newRow);
-});
+//   // Append the new row to the table
+//   $("#customerOrderTable > tbody").prepend(newRow);
+// });
 
 
 
