@@ -150,14 +150,14 @@
 
                             <div class="col-md-10">
                                 <p class="mainContentTextBlack">Select from meal list:</p>
-                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-mealList">
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-mealNameCaloriesPerSingleQuantity">
+                                    <!-- IN ALPHABETICAL ORDER -->
                                     <option value="0"></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="700">Hamburger (700calories)</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <option value="Hamburger (540 cal)">Hamburger (540 cal)</option>
+                                    <option value="Salad - plain (20 cal)">Salad - plain (20 cal)</option>
+                                    <option value="Salad - with dressing (148 cal)">Salad - w/ dressing (148 cal)</option>
+                                    <option value="Steak - beef (614 cal)">Steak - beef (614 cal)</option>
+                                    <option value="Steak - tuna (184 cal)">Steak - tuna (184 cal)</option>
                                 </select>
                                 <br></br>
                                 <input type="text" class="form-control" id="calorieEntryPage-mealQuantity" placeholder="Quantity" autocomplete="off">  <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
@@ -174,17 +174,16 @@
 
                             <div class="col-md-10">
                                 <p class="mainContentTextBlack">Select from drink list:</p>
-                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-drinkList">
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-drinkNameCaloriesPerGlass">
+                                    <!-- IN ALPHABETICAL ORDER -->
                                     <option value="0"></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="700">Hamburger (700calories)</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <option value="Beer - can (153 cal)">Beer - can (153 cal)</option>
+                                    <option value="Wine - red, glass (125 cal)">Wine - red, glass (125 cal)</option>
+                                    <option value="Wine - white, glass (121 cal)">Wine - white, glass (121 cal)</option>
+                                    <option value="Soda - Cola, can (140 cal)">Soda - Cola, can (140 cal)</option>
                                 </select>
                                 <br></br>
-                                <input type="text" class="form-control" id="calorieEntryPage-drinkNumberOfGlasses" placeholder="Number of glasses" autocomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                                <input type="text" class="form-control" id="calorieEntryPage-drinkQuantity" placeholder="Quantity" autocomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
                             </div>
                         </div> 
 
@@ -198,14 +197,12 @@
 
                             <div class="col-md-10">
                                 <p class="mainContentTextBlack">Select from ingredient list:</p>
-                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-ingredientList">
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-ingredientNameCaloriesPerGram">
+                                    <!-- IN ALPHABETICAL ORDER -->
                                     <option value="0"></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="700">Hamburger (700calories)</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <option value="Carrot (0.3 cal/g)">Carrot (0.3 cal/g)</option>
+                                    <option value="Onion (0.4 cal/g)">Onion (0.4 cal/g)</option>
+                                    <option value="Spinach (0.2 cal/g)">Spinach (0.2 cal/g)</option>
                                 </select>
                                 <br></br>
                                 <input type="text" class="form-control" id="calorieEntryPage-ingredientGrams" placeholder="Grams" autocomplete="off">    <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
@@ -224,7 +221,7 @@
                                 <p class="mainContentTextBlack">Manual entry of meal / drink / ingredient:</p>
                                 <a class="anchor1" href="https://www.nutritionix.com/uk/database/common-foods" target="_blank">Click here to look up calories</a>
                                 <br></br>
-                                <input type="text" class="form-control" id="calorieEntryPage-manualEntryNameOfItem" placeholder="Name of meal / drink / ingredient" autcomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                                <input type="text" class="form-control" id="calorieEntryPage-manualEntryName" placeholder="Name of meal / drink / ingredient" autcomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
                                 <br>
                                 <input type="text" class="form-control" id="calorieEntryPage-manualEntryCalories" placeholder="Calories" autocomplete="off">     <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
                             </div>
