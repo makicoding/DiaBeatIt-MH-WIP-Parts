@@ -29,7 +29,7 @@
 }
 
 .button1:focus {
-    outline: 0;         /* This gets rid of the blue outline around the button when the button is clicked */
+    /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
 }
 
 /* -------------------- */
@@ -67,7 +67,7 @@ instead of #CECECE border)
 }
 
 .button2:focus {
-    outline: 0;         /* This gets rid of the blue outline around the button when the button is clicked */
+    /* outline: 0;         This gets rid of the blue outline around the button when the button is clicked */
 }
 /* -------------------- */
 /* Anchor 1 button */

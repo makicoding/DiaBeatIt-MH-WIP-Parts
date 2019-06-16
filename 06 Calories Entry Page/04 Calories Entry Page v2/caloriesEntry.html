@@ -19,19 +19,34 @@
 
     <!-- Datepicker Links -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
     <!-- jQuery (these jQuery links for Datepicker are compatible with Hamburger Menu) -->
     <!-- This must come before the Bootstrap Popper and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <!-- Datepicker Script -->
+    <!-- Datepicker Script (WITHOUT current date auto-filled) -->
+    <!-- <script>
+        $(function () {
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            );
+        });
+    </script> -->
+
+    <!-- Datepicker Script (WITH current date auto-filled) -->
     <script>
         $(function () {
-            $("#datepicker").datepicker({ 
-                dateFormat: 'yy/mm/dd' 
-            });
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            ).datepicker(
+                'setDate', 'today'
+                
+                // 'setDate', new Date()   // this is an alternative method that works too
+                // reference for 'setDate', new Date() :
+                // https://stackoverflow.com/questions/233553/how-do-i-pre-populate-a-jquery-datepicker-textbox-with-todays-date
+
+            );
         });
     </script>
 
@@ -245,9 +260,9 @@
                             <div class="col-md-1"></div>
 
                             <div class="col-md-10">
-                                <button class="button1" id="calorieEntryPage-submitButton">Submit</button>
+                                <button class="button1" id="calorieEntryPageSubmitButton">Submit</button>
                                 <br>
-                                <div class="errorMessage mainContentTextRed">Error message here</div>
+                                <div class="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
 
                             </div>
                         </div> 

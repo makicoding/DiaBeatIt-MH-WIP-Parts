@@ -12,3 +12,8 @@
     border-color: #cbd3d9;      /* This is the same color as the default input box border color */
     background-color: white;
 }
+
+.dropDownMenu1:focus {
+    outline-color: #95c8ff;     /* This is a very similar color to the default outline */
+    outline-width: 6px;
+}
