@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+
+    
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="assets/css/hamburgerMenu.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/text.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mainContentContainer.css">
+
+    <!-- Datepicker Links -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- jQuery (these jQuery links for Datepicker are compatible with Hamburger Menu) -->
+    <!-- This must come before the Bootstrap Popper and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Datepicker Script (WITHOUT current date auto-filled) -->
+    <!-- <script>
+        $(function () {
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            );
+        });
+    </script> -->
+
+    <!-- Datepicker Script (WITH current date auto-filled) -->
+    <script>
+        $(function () {
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            ).datepicker(
+                'setDate', 'today'
+                
+                // 'setDate', new Date()   // this is an alternative method that works too
+                // reference for 'setDate', new Date() :
+                // https://stackoverflow.com/questions/233553/how-do-i-pre-populate-a-jquery-datepicker-textbox-with-todays-date
+
+            );
+        });
+    </script>
+
+    <title>DiaBeatIt</title>
+
+</head>
+<body>
+    
+    <!-------------------------------------------------------------------------------->
+    <!-- MAIN CONTENT OF PAGE -->
+
+    <!-- Page header -->
+    <div class="pageHeader">Calories Entry</div>
+    
+        <!-- Main content container -->
+        <div class="mainContentContainer">
+
+            <!-- BOOTSTRAP GRID -->
+            <!-- Max width 960px container -->
+            <div class="container">         <!-- Put any bootstrap elements into class="container" to set max width to 960px and have it centered on page -->
+                
+                <!-- Calories entry form -->
+                <div class="row">
+
+                    <div class="col-md-6 offset-md-3">           
+
+                        <!-- Subrow -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="sectionTitle">Enter data:</p>
+                            </div>
+                        </div> 
+
+                        <!------------------------------>
+                        <!-- Subrow (FORM SECTION 1)-->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">1.</p>
+                            </div>
+
+                            <div class="col-md-10">                               
+                                <!-- Datepicker -->
+                                <div class='form-group'>
+                                    <label for="body"></label>
+                                    <label for="category" class="mainContentTextBlack">Please select date:</label>
+                                    <br>
+                                    <input type="text" class="form-control" id="datepicker" autocomplete="off"> <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                                </div>
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+                        
+                        <!------------------------------>
+                        <!-- Subrow (FORM SECTION 2) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">2.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Please select meal category:</p>
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-mealCategory">
+                                    <option value="0"></option>
+                                    <option value="Breakfast">Breakfast</option>
+                                    <option value="Morning snack">Morning snack</option>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Afternoon snack">Afternoon snack</option>
+                                    <option value="Dinner">Dinner</option>
+                                    <option value="Other snack">Other snack</option>
+                                </select>
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+
+                        <!------------------------------>
+                        <!-- Subrow (FORM SECTION 3) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">3.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <text class="mainContentTextBlack">Please enter <span class="mainContentTextRed">ONE</span> of the following parts:</text>
+                                <p class="mainContentTextRed">(fill out either part A, B, C or D only)</p>
+                            </div>
+                        </div> 
+
+                        <!-- Subrow -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">A.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Select from meal list:</p>
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-mealNameCaloriesPerSingleQuantity">
+                                    <!-- IN ALPHABETICAL ORDER -->
+                                    <option value="0"></option>
+                                    <option value="Hamburger (540 cal)">Hamburger (540 cal)</option>
+                                    <option value="Salad - plain (20 cal)">Salad - plain (20 cal)</option>
+                                    <option value="Salad - with dressing (148 cal)">Salad - w/ dressing (148 cal)</option>
+                                    <option value="Steak - beef (614 cal)">Steak - beef (614 cal)</option>
+                                    <option value="Steak - tuna (184 cal)">Steak - tuna (184 cal)</option>
+                                </select>
+                                <br></br>
+                                <input type="text" class="form-control" id="calorieEntryPage-mealQuantity" placeholder="Quantity" autocomplete="off">  <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                            </div>
+                        </div>
+                        
+                        <br></br>
+
+                        <!-- Subrow -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">B.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Select from drink list:</p>
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-drinkNameCaloriesPerGlass">
+                                    <!-- IN ALPHABETICAL ORDER -->
+                                    <option value="0"></option>
+                                    <option value="Beer - can (153 cal)">Beer - can (153 cal)</option>
+                                    <option value="Wine - red, glass (125 cal)">Wine - red, glass (125 cal)</option>
+                                    <option value="Wine - white, glass (121 cal)">Wine - white, glass (121 cal)</option>
+                                    <option value="Soda - Cola, can (140 cal)">Soda - Cola, can (140 cal)</option>
+                                </select>
+                                <br></br>
+                                <input type="text" class="form-control" id="calorieEntryPage-drinkQuantity" placeholder="Quantity" autocomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                            </div>
+                        </div> 
+
+                        <br></br>
+
+                        <!-- Subrow -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">C.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Select from ingredient list:</p>
+                                <select class="chosen-select dropDownMenu1" id="calorieEntryPage-ingredientNameCaloriesPerGram">
+                                    <!-- IN ALPHABETICAL ORDER -->
+                                    <option value="0"></option>
+                                    <option value="Carrot (0.3 cal/g)">Carrot (0.3 cal/g)</option>
+                                    <option value="Onion (0.4 cal/g)">Onion (0.4 cal/g)</option>
+                                    <option value="Spinach (0.2 cal/g)">Spinach (0.2 cal/g)</option>
+                                </select>
+                                <br></br>
+                                <input type="text" class="form-control" id="calorieEntryPage-ingredientGrams" placeholder="Grams" autocomplete="off">    <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                            </div>
+                        </div> 
+
+                        <br></br>
+
+                        <!-- Subrow -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">D.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Manual entry of meal / drink / ingredient:</p>
+                                <a class="anchor1" href="https://www.nutritionix.com/uk/database/common-foods" target="_blank">Click here to look up calories</a>
+                                <br></br>
+                                <input type="text" class="form-control" id="calorieEntryPage-manualEntryName" placeholder="Name of meal / drink / ingredient" autcomplete="off">   <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                                <br>
+                                <input type="text" class="form-control" id="calorieEntryPage-manualEntryCalories" placeholder="Calories" autocomplete="off">     <!-- autocomplete="off" is used to turn off the autocomplete of input field -->
+                            </div>
+                        </div> 
+
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+
+                        <!------------------------------>
+                        <!-- Subrow (FORM SECTION 4) -->
+                        <div class="row">
+                            <div class="col-md-1">
+                                <p class="sectionTitle">4.</p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <p class="mainContentTextBlack">Please enter any additional notes (optional):</p>
+                                <textarea class="form-control" id="calorieEntryPage-notes" placeholder="" rows="4" autoComplete="off"></textarea>       <!-- autocomplete="off" is used to turn off the autocomplete of text area field -->
+                            </div>
+                        </div> 
+                        
+                        <br>
+                        <!-- <hr class="horizontalRuleGray"> -->
+                        <hr class="horizontalRuleBlue">
+                        <!-- <hr class="horizontalRuleYellow"> -->
+                        <br>
+
+                        <!------------------------------>
+                        <!-- Subrow (FORM SECTION 4) -->
+                        <div class="row">
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-10">
+                                <button class="button1" id="calorieEntryPageSubmitButton">Submit</button>
+                                <br>
+                                <div class="mainContentTextRed" id="calorieEntryPage-errorMessage"></div>
+                            </div>
+                        </div> 
+
+                    </div>
+
+                </div>
+
+            <div>
+
+        </div>
+
+    </div>
+
+    <br></br>
+    <br></br>
+
+    
+
+
+    <!-------------------------------------------------------------------------------->
+    <!-- NAVBAR -->
+
+    <!-- The Overlay -->
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- &times; is the icon for X -->
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <span class="nonActiveButton">Calorie Entry</span>
+            <a href="index.html">Calorie Data</a>
+            <a href="index.html">Store Finder</a>
+            <a href="index.html">Recipes Finder</a>
+            <a href="index.html">Health Timeline</a>
+            <a href="index.html">Digital Health Card</a>
+            <a href="index.html">Resources</a>
+            <a href="index.html">Contact</a>
+            <a href="index.html">Sign Out</a>
+        </div>
+
+    </div>
+  
+    <!-- Top Bar and Branding Text -->
+    <div class="topBar">
+        <!-- <span class="branding">Branding</span> -->
+        <a class="branding" href="https://www.google.com">DiaBeatIt</a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="topnav">
+
+        <!-- Hamburger icon -->
+        <a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a> <!-- &#9776; is the hamburger icon -->
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------->
+
+    <!-- Bootstrap Popper and Bootstrap JS -->
+    <!-- Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+
+    <!-- JavaScript Link -->
+    <script src="assets/javascript/hamburgerMenu.js"></script>
+    <script src="assets/javascript/caloriesEntry.js"></script>
+
+</body>
+</html>
