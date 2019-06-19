@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+
+    
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="assets/css/hamburgerMenu.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/text.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mainContentContainer.css">
+
+    <!-- Datepicker Links -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- jQuery (these jQuery links for Datepicker are compatible with Hamburger Menu) -->
+    <!-- This must come before the Bootstrap Popper and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Bootstrap Popper and Bootstrap JS -->
+    <!-- Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+
+    <!-- Datepicker Script (WITHOUT current date auto-filled) -->
+    <!-- <script>
+        $(function () {
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            );
+        });
+    </script> -->
+
+    <!-- Datepicker Script (WITH current date auto-filled) -->
+    <script>
+        $(function () {
+            $("#datepicker").datepicker(
+                {dateFormat: 'yy/mm/dd'}
+            ).datepicker(
+                'setDate', 'today'
+                
+                // 'setDate', new Date()   // this is an alternative method that works too
+                // reference for 'setDate', new Date() :
+                // https://stackoverflow.com/questions/233553/how-do-i-pre-populate-a-jquery-datepicker-textbox-with-todays-date
+
+            );
+        });
+    </script>
+
+    <title>DiaBeatIt</title>
+
+</head>
+<body>
+    
+    <!-------------------------------------------------------------------------------->
+    <!-- MAIN CONTENT OF PAGE -->
+
+    <!-- Page header -->
+    <div class="pageHeader">Page Header</div>
+    
+        <!-- Main content container -->
+        <div class="mainContentContainer">
+
+            <!-- BOOTSTRAP GRID -->
+            <!-- Max width 960px container -->
+            <div class="container">         <!-- Put any bootstrap elements into class="container" to set max width to 960px and have it centered on page -->
+                
+                <div class="row">
+
+
+
+
+
+                    <!-- ENTER CONTENT HERE -->
+                    
+                    
+
+
+
+
+                </div>
+
+            <div>
+
+        </div>
+
+    </div>
+
+    <br></br>
+    <br></br>
+
+    
+
+
+    <!-------------------------------------------------------------------------------->
+    <!-- NAVBAR -->
+
+    <!-- The Overlay -->
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- &times; is the icon for X -->
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <span class="nonActiveButton">Calorie Entry</span>
+            <a href="index.html">Calorie Data</a>
+            <a href="index.html">Store Finder</a>
+            <a href="index.html">Recipes Finder</a>
+            <a href="index.html">Health Timeline</a>
+            <a href="index.html">Digital Health Card</a>
+            <a href="index.html">Resources</a>
+            <a href="index.html">Contact</a>
+            <a href="index.html">Sign Out</a>
+        </div>
+
+    </div>
+  
+    <!-- Top Bar and Branding Text -->
+    <div class="topBar">
+        <!-- <span class="branding">Branding</span> -->
+        <a class="branding" href="https://www.google.com">DiaBeatIt</a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="topnav">
+
+        <!-- Hamburger icon -->
+        <a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a> <!-- &#9776; is the hamburger icon -->
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------->
+
+    <!-- JavaScript Link -->
+    <script src="assets/javascript/hamburgerMenu.js"></script>
+    <script src="assets/javascript/pageTemplate.js"></script>
+
+</body>
+</html>

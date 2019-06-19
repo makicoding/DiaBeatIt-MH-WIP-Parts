@@ -171,22 +171,24 @@ document.getElementById("calorieEntryPageSubmitButton").onclick = function(event
   // Execute function to validate form data
   var data = validateFormData();
 
+  console.log(data);
+  
   // Push user input data to Mongo DB
-  $.post("/api/calorie", data,
-    function(res){      
-      // Clear the form when submitting
-      $("#calorieEntryPage-mealCategory").val("");
-      $("#calorieEntryPage-mealNameCaloriesPerSingleQuantity").val("");
-      $("#calorieEntryPage-mealQuantity").val("");
-      $("#calorieEntryPage-drinkNameCaloriesPerGlass").val("");
-      $("#calorieEntryPage-drinkQuantity").val("");
-      $("#calorieEntryPage-ingredientNameCaloriesPerGram").val("");
-      $("#calorieEntryPage-ingredientGrams").val("");
-      $("#calorieEntryPage-manualEntryName").val("");
-      $("#calorieEntryPage-manualEntryCalories").val("");
-      $("#calorieEntryPage-notes").val("");      
+  // $.post("/api/calorie", data,
+  //   function(res){      
+  //     // Clear the form when submitting
+  //     $("#calorieEntryPage-mealCategory").val("");
+  //     $("#calorieEntryPage-mealNameCaloriesPerSingleQuantity").val("");
+  //     $("#calorieEntryPage-mealQuantity").val("");
+  //     $("#calorieEntryPage-drinkNameCaloriesPerGlass").val("");
+  //     $("#calorieEntryPage-drinkQuantity").val("");
+  //     $("#calorieEntryPage-ingredientNameCaloriesPerGram").val("");
+  //     $("#calorieEntryPage-ingredientGrams").val("");
+  //     $("#calorieEntryPage-manualEntryName").val("");
+  //     $("#calorieEntryPage-manualEntryCalories").val("");
+  //     $("#calorieEntryPage-notes").val("");      
       
-      $("#calorieEntryPage-errorMessage").text("Save Successful!");
-    }
-  )
+  //     $("#calorieEntryPage-errorMessage").text("Save Successful!");
+  //   }
+  // )
 };
