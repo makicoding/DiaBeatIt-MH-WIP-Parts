@@ -9,15 +9,15 @@ class MainMenu extends React.Component {
 
         {/* MAIN MENU */}
         <div className="backgroundColor">
-          <a href="index.html">Calorie Entry</a>
-          <a href="index.html">Calorie Data</a>
-          <a href="index.html">Store Finder</a>
-          <a href="index.html">Recipes Finder</a>
-          <a href="index.html">Health Timeline</a>
-          <a href="index.html">Digital Health Card</a>
-          <a href="index.html">Resources</a>
-          <a href="index.html">Contact</a>
-          <a href="index.html">Sign Out</a>
+          <a className="mainMenuAnchor" href="CalorieEntry">Calorie Entry</a>
+          <a className="mainMenuAnchor" href="CalorieData">Calorie Data</a>
+          <a className="mainMenuAnchor" href="StoreFinder">Store Finder</a>
+          <a className="mainMenuAnchor" href="RecipeFinder">Recipe Finder</a>
+          <a className="mainMenuAnchor" href="HealthTimeline">Health Timeline</a>
+          <a className="mainMenuAnchor" href="HealthCard">Digital Health Card</a>
+          <a className="mainMenuAnchor" href="Resources">Resources</a>
+          <a className="mainMenuAnchor" href="Contact">Contact</a>
+          <a className="mainMenuAnchor" href="index.html">Sign Out</a>
         </div>
 
       </div>

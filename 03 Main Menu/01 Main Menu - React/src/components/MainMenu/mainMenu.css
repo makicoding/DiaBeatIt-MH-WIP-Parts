@@ -2,20 +2,20 @@
     width: 100%;
     height: 100%;
     background-color: #4569FF;
-    background-color: white;
+    /* background-color: white; */
 
     position: fixed;
     top: 0;
     left: 0;
 }
 
-a {
+.mainMenuAnchor {
     display: block;     /* By setting the anchor display to block, it stacks the anchors one on top of the other instead of inline */
 
     width: 100%;
 
     color: white;
-    color: #4569FF;
+    /* color: #4569FF; */
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-weight: 700;
@@ -26,19 +26,19 @@ a {
 
     cursor: pointer;
 
-    /* transition: 0.3s; /* Transition effects on hover (color) */
+    transition: 0.3s; /* Transition effects on hover (color) */
 
     position: relative;
     /* top: 19%; Percentage from the top  - Original position */
     top: 13%; /* Percentage from the top */
 }
 
-a:hover, a:focus {
+.mainMenuAnchor:hover, .mainMenuAnchor:focus {
     color: #FFAB0A;
     /* color: rgb(238, 155, 0);    Slightly darker yellow to improve visibility */
     /* color: rgb(222, 144, 0); */
-    /* font-size: 42px; */
-    font-size: 32px;
+    font-size: 42px;
+    /* font-size: 32px; */
 
     text-decoration: none;
 }
@@ -61,7 +61,7 @@ a:hover, a:focus {
 /* (1024px is viewport height of iPad in vertical) */
 @media screen and (max-width: 980px) {
 
-    a {
+    .mainMenuAnchor {
         /* top: 24%;   Original postion */
         top: 21%;
     }
@@ -74,14 +74,14 @@ a:hover, a:focus {
 /* (375px is viewport width of iPhone X in vertical) */
 @media screen and (max-width: 750px) {
 
-    a {
+    .mainMenuAnchor {
         font-size: 30px;
 
         /* top: 20%;   Original position */
         top: 10%;
     }
 
-    a:hover, a:focus {
+    .mainMenuAnchor:hover, .mainMenuAnchor:focus {
         font-size: 30px;
     }
 
